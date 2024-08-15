@@ -75,9 +75,10 @@ const About = () => {
                     <a href="/Curriculum-Vitae.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Descargar CV
                     </a>
-                    <a href="mailto:jsogfd@gmail.com" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
+                    <a href="#contact" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Contactarme
                     </a>
+
                 </div>
             </div>
         </div>

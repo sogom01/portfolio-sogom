@@ -14,3 +14,7 @@ body {
 .text-red-700 {
   color: #f60b0b;
 }
+
+html {
+  scroll-behavior: smooth;
+}

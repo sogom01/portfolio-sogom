@@ -3,7 +3,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Projects from './components/Projects';
 import Education from './components/Education';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
         <section id="education">
           <Education />
         </section>
-        {/* <section id="contact">
+        <section id="contact">
           <Contact />
-        </section> */}
+        </section>
       </main>
     </div>
   );
