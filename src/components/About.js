@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import profileImage from '../img/3.webp';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'; // Importamos el icono de WhatsApp
 import { SiX } from 'react-icons/si';
 
 const About = () => {
@@ -70,6 +70,15 @@ const About = () => {
                     <a href="https://x.com/sogom_01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="X (anteriormente Twitter)">
                         <SiX size={24} />
                     </a>
+                    <a
+                        href={`https://wa.me/573147132470?text=Hola%20vi%20tu%20portafolio,%20quiero%20saber%20si%20tienes%20disponibilidad%20para%20comentarte%20la%20idea%20que%20tengo`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-neon rounded-full"
+                        aria-label="WhatsApp"
+                    >
+                        <FaWhatsapp size={24} />
+                    </a>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 mt-4 w-full">
                     <a href="/Curriculum-Vitae.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap">
@@ -78,7 +87,6 @@ const About = () => {
                     <a href="#contact" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Contactarme
                     </a>
-
                 </div>
             </div>
         </div>

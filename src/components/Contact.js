@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
+    const [messageSent, setMessageSent] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -9,13 +10,12 @@ const Contact = () => {
         emailjs.sendForm('service_03yrdkh', 'template_y2fvkmt', e.target, 'y98ODb9BJbZ6wbyzE')
             .then((result) => {
                 console.log(result.text);
-                alert('Mensaje enviado con éxito');
+                setMessageSent(true);  // Muestra el mensaje de éxito
+                e.target.reset();       // Resetea el formulario
             }, (error) => {
                 console.log(error.text);
                 alert('Hubo un error al enviar el mensaje');
             });
-
-        e.target.reset(); // Resetea el formulario
     };
 
     return (
@@ -72,6 +72,11 @@ const Contact = () => {
                     </button>
                 </div>
             </form>
+            {messageSent && (
+                <div className="mt-4 text-center text-green-500 font-bold">
+                    ¡Mensaje enviado con éxito! Me pondré en contacto contigo cuanto antes.
+                </div>
+            )}
         </section>
     );
 };
