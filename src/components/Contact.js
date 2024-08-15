@@ -1,12 +1,29 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_03yrdkh', 'template_y2fvkmt', e.target, 'y98ODb9BJbZ6wbyzE')
+            .then((result) => {
+                console.log(result.text);
+                alert('Mensaje enviado con éxito');
+            }, (error) => {
+                console.log(error.text);
+                alert('Hubo un error al enviar el mensaje');
+            });
+
+        e.target.reset(); // Resetea el formulario
+    };
+
     return (
         <section id="contact" className="bg-transparent p-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
                 Contactarme
             </h2>
-            <form className="space-y-6 max-w-lg mx-auto bg-transparent p-8 rounded-lg shadow-lg">
+            <form onSubmit={sendEmail} className="space-y-6 max-w-lg mx-auto bg-transparent p-8 rounded-lg shadow-lg">
                 <div>
                     <label className="block text-sm md:text-base lg:text-lg text-gray-300 mb-2" htmlFor="name">
                         Nombre
@@ -14,6 +31,7 @@ const Contact = () => {
                     <input
                         type="text"
                         id="name"
+                        name="name"
                         className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         placeholder="Ingresa tu nombre"
                         required
@@ -26,6 +44,7 @@ const Contact = () => {
                     <input
                         type="email"
                         id="email"
+                        name="email"
                         className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         placeholder="Ingresa tu correo electrónico"
                         required
@@ -37,6 +56,7 @@ const Contact = () => {
                     </label>
                     <textarea
                         id="message"
+                        name="message"
                         className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                         rows="4"
                         placeholder="Escribe tu mensaje"
