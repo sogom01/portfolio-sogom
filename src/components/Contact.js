@@ -2,55 +2,22 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <section id="contact" className="bg-transparent p-6">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
-                Contactarme
-            </h2>
-            <form className="space-y-6 max-w-lg mx-auto bg-transparent p-8 rounded-lg shadow-lg">
+        <section className="bg-gray-100 p-4">
+            <h2 className="text-2xl font-semibold">Contact</h2>
+            <form className="space-y-4">
                 <div>
-                    <label className="block text-sm md:text-base lg:text-lg text-gray-300 mb-2" htmlFor="name">
-                        Nombre
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        placeholder="Ingresa tu nombre"
-                        required
-                    />
+                    <label className="block text-gray-700">Name</label>
+                    <input type="text" className="w-full p-2 border rounded" />
                 </div>
                 <div>
-                    <label className="block text-sm md:text-base lg:text-lg text-gray-300 mb-2" htmlFor="email">
-                        Correo Electrónico
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        placeholder="Ingresa tu correo electrónico"
-                        required
-                    />
+                    <label className="block text-gray-700">Email</label>
+                    <input type="email" className="w-full p-2 border rounded" />
                 </div>
                 <div>
-                    <label className="block text-sm md:text-base lg:text-lg text-gray-300 mb-2" htmlFor="message">
-                        Mensaje
-                    </label>
-                    <textarea
-                        id="message"
-                        className="w-full p-3 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        rows="4"
-                        placeholder="Escribe tu mensaje"
-                        required
-                    ></textarea>
+                    <label className="block text-gray-700">Message</label>
+                    <textarea className="w-full p-2 border rounded"></textarea>
                 </div>
-                <div className="text-center">
-                    <button
-                        type="submit"
-                        className="bg-red-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500"
-                    >
-                        Enviar Mensaje
-                    </button>
-                </div>
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded">Send</button>
             </form>
         </section>
     );
