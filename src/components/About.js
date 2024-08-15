@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import profileImage from '../img/3.webp';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava } from 'react-icons/fa';
-import { SiTailwindcss, SiAstro, SiAngular, SiMysql } from 'react-icons/si';
-import { SiX } from 'react-icons/si';
+import { SiTailwindcss, SiAstro, SiAngular, SiMysql, SiX } from 'react-icons/si';
 
 const About = () => {
     const roles = useMemo(() => [
@@ -45,13 +44,13 @@ const About = () => {
     }, [displayedText, deleting, roles, currentRole]);
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-transparent p-6 overflow-hidden font-poppins">
-            <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
+        <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen bg-transparent p-6 overflow-hidden font-poppins">
+            <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0">
                 <div className="w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-neon transition-shadow duration-300 hover:shadow-neon-lg">
                     <img src={profileImage} alt="Profile" className="object-cover w-full h-full" />
                 </div>
             </div>
-            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 text-center md:text-left">
+            <div className="w-full lg:w-1/2 mt-6 lg:mt-0 lg:pl-10 text-center lg:text-left">
                 <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white overflow-hidden" style={{ lineHeight: '1.5', minHeight: '3rem' }}>
                     Soy <span className="text-red-700" style={{ color: '#f60b0b', whiteSpace: 'nowrap' }}>{displayedText}</span>
                 </p>
@@ -61,7 +60,7 @@ const About = () => {
                 <p className="text-sm md:text-base lg:text-lg text-white mt-4">
                     Estoy comprometido con la creación de aplicaciones web que ofrezcan una experiencia de usuario excepcional. ¡Descubre mis proyectos y hablemos sobre cómo puedo ayudarte a hacer realidad tus ideas!
                 </p>
-                <div className="flex justify-center md:justify-start space-x-4 mt-6">
+                <div className="flex justify-center lg:justify-start space-x-4 mt-6">
                     <a href="https://github.com/sogom01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="Github">
                         <FaGithub size={24} />
                     </a>
@@ -81,7 +80,7 @@ const About = () => {
                         <FaWhatsapp size={24} />
                     </a>
                 </div>
-                <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 mt-4 w-full">
+                <div className="flex flex-col lg:flex-row justify-center lg:justify-start space-y-4 lg:space-y-0 lg:space-x-4 mt-4 w-full">
                     <a href="/Curriculum-Vitae.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Descargar CV
                     </a>
@@ -91,7 +90,7 @@ const About = () => {
                 </div>
                 <div className="mt-8">
                     <h4 className="text-lg font-semibold text-white mb-4">Tecnologías que manejo:</h4>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 justify-center items-center">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 justify-center items-center">
                         <FaHtml5 size={40} className="text-red-600" title="HTML5" />
                         <FaCss3Alt size={40} className="text-blue-600" title="CSS3" />
                         <FaJs size={40} className="text-yellow-500" title="JavaScript" />
