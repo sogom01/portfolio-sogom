@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import profileImage from '../img/3.webp';
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'; // Importamos el icono de WhatsApp
+import { FaGithub, FaLinkedin, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava } from 'react-icons/fa';
+import { SiTailwindcss, SiAstro, SiAngular, SiMysql } from 'react-icons/si';
 import { SiX } from 'react-icons/si';
 
 const About = () => {
@@ -23,7 +24,7 @@ const About = () => {
                     if (prev.length < roles[currentRole].length) {
                         return roles[currentRole].slice(0, prev.length + 1);
                     } else {
-                        setTimeout(() => setDeleting(true), 1000); // Pausa más larga antes de borrar
+                        setTimeout(() => setDeleting(true), 1000);
                         return prev;
                     }
                 } else {
@@ -38,7 +39,7 @@ const About = () => {
             });
         };
 
-        const typingTimeout = setTimeout(handleTyping, deleting ? 50 : 150); // Controlar la velocidad de borrado y escritura
+        const typingTimeout = setTimeout(handleTyping, deleting ? 50 : 150);
 
         return () => clearTimeout(typingTimeout);
     }, [displayedText, deleting, roles, currentRole]);
@@ -55,10 +56,10 @@ const About = () => {
                     Soy <span className="text-red-700" style={{ color: '#f60b0b', whiteSpace: 'nowrap' }}>{displayedText}</span>
                 </p>
                 <p className="text-sm md:text-base lg:text-lg text-white mt-4">
-                    Bienvenido a mi mundo digital, donde la creatividad se encuentra con la innovación y la pasión se convierte en resultados tangibles. En este espacio, te invito a explorar un viaje a través de mis experiencias, proyectos y logros. Desde proyectos que he realizado como modelo para empresas hasta proyectos de práctica para plasmar mi creatividad.
+                    Bienvenido a mi espacio digital, donde combino creatividad y tecnología para desarrollar soluciones eficientes y elegantes. Desde la gestión de peticiones hasta el diseño de interfaces y el desarrollo de software, mi objetivo es transformar ideas en realidades tangibles.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg text-white mt-4">
-                    Mi objetivo es construir aplicaciones web eficientes y elegantes que ofrezcan una gran experiencia de usuario. ¡Estoy emocionado de compartir mis proyectos contigo!
+                    Estoy comprometido con la creación de aplicaciones web que ofrezcan una experiencia de usuario excepcional. ¡Descubre mis proyectos y hablemos sobre cómo puedo ayudarte a hacer realidad tus ideas!
                 </p>
                 <div className="flex justify-center md:justify-start space-x-4 mt-6">
                     <a href="https://github.com/sogom01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="Github">
@@ -87,6 +88,20 @@ const About = () => {
                     <a href="#contact" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Contactarme
                     </a>
+                </div>
+                <div className="mt-8">
+                    <h4 className="text-lg font-semibold text-white mb-4">Tecnologías que manejo:</h4>
+                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 justify-center items-center">
+                        <FaHtml5 size={40} className="text-red-600" title="HTML5" />
+                        <FaCss3Alt size={40} className="text-blue-600" title="CSS3" />
+                        <FaJs size={40} className="text-yellow-500" title="JavaScript" />
+                        <FaReact size={40} className="text-cyan-500" title="React" />
+                        <SiAngular size={40} className="text-red-600" title="Angular" />
+                        <SiTailwindcss size={40} className="text-cyan-400" title="Tailwind CSS" />
+                        <SiAstro size={40} className="text-orange-500" title="Astro" />
+                        <SiMysql size={40} className="text-blue-600" title="MySQL" />
+                        <FaJava size={40} className="text-red-700" title="Java" />
+                    </div>
                 </div>
             </div>
         </div>
