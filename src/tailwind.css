@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.neon-effect {
+  text-shadow: 0 0 5px #f60b0b, 0 0 10px #f60b0b, 0 0 20px #f60b0b,
+    0 0 40px #f60b0b;
+}
+
+.backdrop-filter {
+  backdrop-filter: blur(10px);
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text-red-500 {
+  color: #f60b0b;
+}
+
+.hover\:text-red-500:hover {
+  color: #f60b0b;
+}
+
+.active {
+  color: #f60b0b;
+  border-bottom: 2px solid #f60b0b;
+}
+
+.btn-neon {
+  @apply text-red-700 bg-transparent border-2 border-red-700 rounded-full px-4 py-2 transition-all duration-300 ease-in-out;
+  box-shadow: 0 0 10px rgba(246, 11, 11, 0.5), 0 0 20px rgba(246, 11, 11, 0.5),
+    0 0 30px rgba(246, 11, 11, 0.5);
+}
+
+.btn-neon:hover {
+  @apply bg-red-700 text-black transform scale-105;
+  box-shadow: 0 0 15px rgba(246, 11, 11, 1), 0 0 30px rgba(246, 11, 11, 1),
+    0 0 45px rgba(246, 11, 11, 1);
+}
+
+.btn-neon-cv {
+  @apply text-black bg-red-700 border-2 border-red-700 rounded-full px-4 py-2 transition-all duration-300 ease-in-out;
+  box-shadow: 0 0 10px rgba(246, 11, 11, 0.5), 0 0 20px rgba(246, 11, 11, 0.5),
+    0 0 30px rgba(246, 11, 11, 0.5);
+}
+
+.btn-neon-cv:hover {
+  @apply bg-red-700 text-black transform scale-105;
+  box-shadow: 0 0 15px rgba(246, 11, 11, 1), 0 0 30px rgba(246, 11, 11, 1),
+    0 0 45px rgba(246, 11, 11, 1);
+}
+
+.shadow-neon {
+  box-shadow: 0 0 10px rgba(246, 11, 11, 0.5), 0 0 20px rgba(246, 11, 11, 0.5),
+    0 0 30px rgba(246, 11, 11, 0.5);
+}
+
+.shadow-neon-lg:hover {
+  box-shadow: 0 0 15px rgba(246, 11, 11, 1), 0 0 30px rgba(246, 11, 11, 1),
+    0 0 45px rgba(246, 11, 11, 1);
+}
+
+.timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 10px;
+}
+.timeline-item.left {
+  left: 0;
+}
+.timeline-item.right {
+  left: 55%;
+}
+.timeline-line {
+  position: absolute;
+  width: 2px;
+  background-color: #f60b0b;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
