@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import profileImage from '../img/3.webp';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
 
 const About = () => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const roles = ['Desarrollador de Software', 'Desarrollador front-end', 'Diseñador de UI/UX', 'Tester de Software', 'Analista de datos'];
+    const roles = useMemo(() => [
+        'Desarrollador de Software',
+        'Desarrollador front-end',
+        'Diseñador de UI/UX',
+        'Tester de Software',
+        'Analista de datos'
+    ], []);
 
     const [currentRole, setCurrentRole] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
@@ -18,7 +23,7 @@ const About = () => {
                     if (prev.length < roles[currentRole].length) {
                         return roles[currentRole].slice(0, prev.length + 1);
                     } else {
-                        setTimeout(() => setDeleting(true), 500);
+                        setTimeout(() => setDeleting(true), 1000); // Pausa más larga antes de borrar
                         return prev;
                     }
                 } else {
@@ -33,10 +38,10 @@ const About = () => {
             });
         };
 
-        const typingInterval = setInterval(handleTyping, 100);
+        const typingTimeout = setTimeout(handleTyping, deleting ? 50 : 150); // Controlar la velocidad de borrado y escritura
 
-        return () => clearInterval(typingInterval);
-    }, [currentRole, deleting, roles]);
+        return () => clearTimeout(typingTimeout);
+    }, [displayedText, deleting, roles, currentRole]);
 
     return (
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-transparent p-6 overflow-hidden font-poppins">
@@ -56,22 +61,21 @@ const About = () => {
                     Mi objetivo es construir aplicaciones web eficientes y elegantes que ofrezcan una gran experiencia de usuario. ¡Estoy emocionado de compartir mis proyectos contigo!
                 </p>
                 <div className="flex justify-center md:justify-start space-x-4 mt-6">
-                    <a href="https://github.com/sogom01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full">
+                    <a href="https://github.com/sogom01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="Github">
                         <FaGithub size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/juan-sebasti%C3%A1n-osorio-g%C3%B3mez-8b1074137" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full">
+                    <a href="https://www.linkedin.com/in/sogom/" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="LinkedIn">
                         <FaLinkedin size={24} />
                     </a>
-                    <a href="https://x.com/sogom_01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full">
+                    <a href="https://x.com/sogom_01" target="_blank" rel="noopener noreferrer" className="btn-neon rounded-full" aria-label="X (anteriormente Twitter)">
                         <SiX size={24} />
                     </a>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 mt-4 w-full">
-                    {/* <a href="/Curriculum-Vitae.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap"> */}
-                    <a href="#.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap">
+                    <a href="/Curriculum-Vitae.pdf" target="_blank" rel="noopener noreferrer" className="btn-neon-cv rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Descargar CV
                     </a>
-                    <a href="mailto:your-email@example.com" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
+                    <a href="mailto:jsogfd@gmail.com" className="btn-neon rounded-full text-center px-6 py-2 whitespace-nowrap">
                         Contactarme
                     </a>
                 </div>
