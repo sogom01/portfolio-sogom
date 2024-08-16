@@ -1,19 +1,24 @@
 import React from 'react';
+import '../ProjectCard.css';
 
-const ProjectCard = ({ image, title, technologies }) => {
+const ProjectCard = ({ image, title, technologies, description }) => {
     return (
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:shadow-red-500 transition-shadow duration-500">
+        <div className="card__portfolio">
             <img
                 src={image}
                 alt={title}
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="card__image"
+                loading="lazy"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <h2 className="text-white text-2xl font-bold mb-2">{title}</h2>
-                <div className="flex space-x-2">
-                    {technologies.map((TechIcon, index) => (
-                        <TechIcon key={index} className="text-white text-3xl" />
-                    ))}
+            <div className="descripcion__container">
+                <h2 className="card__title">{title}</h2>
+                <div className="descripcion">
+                    <p>{description}</p>
+                    <div className="skills">
+                        {technologies.map((TechIcon, index) => (
+                            <TechIcon key={index} className="iconify" />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

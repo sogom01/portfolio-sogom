@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { FaHtml5, FaCss3Alt, FaGithub, FaReact, FaJs, FaNode } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaGithub, FaReact, FaJs } from 'react-icons/fa';
 import { SiTailwindcss, SiAstro, SiVercel } from 'react-icons/si';
 import Proyecto1 from '../proyects/Proyecto1.webp';
 import Proyecto2 from '../proyects/Proyecto2.webp';
@@ -11,6 +11,7 @@ const projects = [
         image: Proyecto1,
         title: 'Iglesia AD Chipre',
         technologies: [SiAstro, SiTailwindcss, FaHtml5, FaJs, FaGithub, SiVercel],
+        description: 'Sitio web de la iglesia Asambleas de Dios Chipre, diseñado para compartir contenido y mantener informados a sus miembros.',
         link: 'https://adchipre.com',
         isCompleted: true,
     },
@@ -18,6 +19,7 @@ const projects = [
         image: Proyecto2,
         title: 'Blog JavaScript',
         technologies: [FaHtml5, FaCss3Alt, FaJs, FaReact],
+        description: 'Blog interactivo sobre JavaScript, con recursos y tutoriales para desarrolladores, creado con React.',
         link: 'https://www.ilovejs.org/',
         isCompleted: true,
     },
@@ -25,6 +27,7 @@ const projects = [
         image: Proyecto3,
         title: 'Tienda S&S Tecnología',
         technologies: [FaHtml5, FaCss3Alt, FaJs, FaGithub],
+        description: 'Tienda en línea en desarrollo para productos tecnológicos, enfocada en ofrecer una experiencia de usuario sencilla y accesible.',
         link: '#',
         isCompleted: false,
     },
@@ -141,7 +144,7 @@ const Projects = () => {
     return (
         <div className="container mx-auto p-4">
             <h2 className="text-3xl font-bold mb-8 text-center text-white">Proyectos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     project.isCompleted ? (
                         <a key={index} href={project.link} target="_blank" rel="noopener noreferrer">
@@ -149,6 +152,7 @@ const Projects = () => {
                                 image={project.image}
                                 title={project.title}
                                 technologies={project.technologies}
+                                description={project.description}
                             />
                         </a>
                     ) : (
@@ -157,6 +161,7 @@ const Projects = () => {
                                 image={project.image}
                                 title={project.title}
                                 technologies={project.technologies}
+                                description={project.description}
                             />
                         </div>
                     )

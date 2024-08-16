@@ -4,6 +4,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </section>
         <section id="contact">
           <Contact />
+        </section>
+        <section id="Footer">
+          <Footer />
         </section>
       </main>
     </div>

@@ -82,3 +82,9 @@
   left: 50%;
   margin-left: -1px;
 }
+
+.border-neon {
+  @apply text-red-700 bg-transparent border-2 border-red-700 rounded-xl px-4 py-2 transition-all duration-300 ease-in-out;
+  box-shadow: 0 0 10px rgba(246, 11, 11, 0.5), 0 0 20px rgba(246, 11, 11, 0.5),
+    0 0 30px rgba(246, 11, 11, 0.5);
+}

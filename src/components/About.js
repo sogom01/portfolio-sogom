@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import profileImage from '../img/3.webp';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaNodeJs, FaBootstrap, FaGit, FaWordpress } from 'react-icons/fa';
-import { SiTailwindcss, SiAstro, SiAngular, SiPostgresql, SiX, SiNpm, SiVercel } from 'react-icons/si';
+import { SiTailwindcss, SiAstro, SiAngular, SiPostgresql, SiX, SiNpm } from 'react-icons/si';
 
 const About = () => {
     const roles = useMemo(() => [
@@ -52,7 +52,6 @@ const About = () => {
         <SiNpm size={40} className="text-red-600 mx-auto" title="NPM" />,
         <FaGit size={40} className="text-orange-500 mx-auto" title="Git" />,
         <FaGithub size={40} className="text-gray-400 mx-auto" title="GitHub" />,
-        <SiVercel size={40} className="text-black mx-auto" title="Vercel" />,
         <FaBootstrap size={40} className="text-purple-600 mx-auto" title="Bootstrap" />,
         <FaWordpress size={40} className="text-blue-600 mx-auto" title="WordPress" />,
         <SiAngular size={40} className="text-red-600 mx-auto" title="Angular" />,
@@ -114,22 +113,15 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            {/* Sección del Banner de Tecnologías */}
+            {/* Sección de Stack Tecnológico */}
             <div className="w-full mt-12">
-                <h4 className="text-lg font-semibold text-white mb-4 text-center">Tecnologías que manejo</h4>
-                <div className="relative overflow-hidden w-full">
-                    <div className="flex animate-marquee space-x-6 w-full">
-                        {techIcons.map((icon, i) => (
-                            <div key={i} className="p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-transform duration-300">
-                                {icon}
-                            </div>
-                        ))}
-                        {techIcons.map((icon, i) => (
-                            <div key={i + techIcons.length} className="p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-transform duration-300">
-                                {icon}
-                            </div>
-                        ))}
-                    </div>
+                <h4 className="text-lg font-semibold text-white mb-4 text-center">Stack Tecnológico</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 border-neon rounded-lg p-6">
+                    {techIcons.map((icon, i) => (
+                        <div key={i} className="flex justify-center items-center p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300">
+                            {icon}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
