@@ -20,9 +20,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className="bg-transparent p-6">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
-                Contactarme
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-white">Contactarme</h2>
             <form onSubmit={sendEmail} className="space-y-6 max-w-lg mx-auto bg-transparent p-8 rounded-lg shadow-lg">
                 <div>
                     <label className="block text-sm md:text-base lg:text-lg text-gray-300 mb-2" htmlFor="name">

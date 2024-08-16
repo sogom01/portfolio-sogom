@@ -3,10 +3,17 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false,
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite', // Ajusta la duración según la velocidad deseada
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
@@ -21,7 +28,6 @@ module.exports = {
         },
       },
       opacity: ['group-hover'],
-
     },
   },
   plugins: [
@@ -29,4 +35,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
-}
+};

@@ -28,7 +28,6 @@ const projects = [
         link: '#',
         isCompleted: false,
     },
-
 ];
 
 const Projects = () => {
@@ -140,26 +139,29 @@ const Projects = () => {
     };
 
     return (
-        <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects.map((project, index) => (
-                project.isCompleted ? (
-                    <a key={index} href={project.link} target="_blank" rel="noopener noreferrer">
-                        <ProjectCard
-                            image={project.image}
-                            title={project.title}
-                            technologies={project.technologies}
-                        />
-                    </a>
-                ) : (
-                    <div key={index} onClick={() => handleCardClick(project)} className="cursor-pointer">
-                        <ProjectCard
-                            image={project.image}
-                            title={project.title}
-                            technologies={project.technologies}
-                        />
-                    </div>
-                )
-            ))}
+        <div className="container mx-auto p-4">
+            <h2 className="text-3xl font-bold mb-8 text-center text-white">Proyectos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {projects.map((project, index) => (
+                    project.isCompleted ? (
+                        <a key={index} href={project.link} target="_blank" rel="noopener noreferrer">
+                            <ProjectCard
+                                image={project.image}
+                                title={project.title}
+                                technologies={project.technologies}
+                            />
+                        </a>
+                    ) : (
+                        <div key={index} onClick={() => handleCardClick(project)} className="cursor-pointer">
+                            <ProjectCard
+                                image={project.image}
+                                title={project.title}
+                                technologies={project.technologies}
+                            />
+                        </div>
+                    )
+                ))}
+            </div>
         </div>
     );
 };
