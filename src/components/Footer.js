@@ -4,7 +4,7 @@ import { SiX } from 'react-icons/si';
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white py-10">
+        <footer className="bg-black text-white py-5">
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Sección de Información */}
                 <div className="flex flex-col items-center md:items-start">
@@ -30,7 +30,7 @@ const Footer = () => {
                     <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                             <FaEnvelope />
-                            <a href="mailto:correo@ejemplo.com" className="hover:text-red-700 transition duration-300">correo@ejemplo.com</a>
+                            <a href="mailto:jsogfd@gmail.com" className="hover:text-red-700 transition duration-300">jsogfd@gmail.com</a>
                         </li>
                         <li className="flex items-center space-x-2">
                             <FaWhatsapp />
